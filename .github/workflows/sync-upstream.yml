@@ -2,7 +2,7 @@ name: Sync fork with upstream
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,6 @@ jobs:
       contents: write
     steps:
       - name: Sync upstream
-        run: gh repo sync ${{ github.repository }} --source FreshRSS/FreshRSS --branch edge
+        run: gh repo sync ${{ github.repository }} --source Aikido-pentest-benchmarks/HackRSS --branch edge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
